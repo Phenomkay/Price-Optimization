@@ -19,7 +19,7 @@ The core objective of this project is to develop and validate a dynamic pricing 
 * Implementing and simulating the dynamic pricing model to compare its performance against the existing pricing strategy.
 
 
-## 4. Data Acquisition
+## Data Acquisition
 
 The dataset utilized in this project was sourced from **Aman Kharwal**, a distinguished Data Scientist, Machine Learning, and AI Engineer. Aman is widely recognized for his extensive contributions to the data community through one of the largest data networks, where he consistently shares invaluable knowledge and insights on Data Analytics, Data Science, Machine Learning, and Artificial Intelligence.
 
@@ -32,4 +32,39 @@ The initial step involved loading the raw `Competition_Data.csv` dataset into a 
 
 Upon loading, an initial inspection of the DataFrame was performed to understand its structure and content
 
+## Column Dictionary
 
+The dataset includes the following columns, providing a comprehensive view of pricing strategies and sales performance:
+
+* **`Fiscal_Week_ID`**: The fiscal week identifier, indicating the specific week of the transaction.
+* **`Store_ID`**: The unique identifier for the retail store where the transaction occurred.
+* **`Item_ID`**: The unique identifier for the item sold.
+* **`Price`**: The price of the item at our store during that fiscal week.
+* **`Item_Quantity`**: The quantity of the item sold at our store during that fiscal week.
+* **`Sales_Amount_No_Discount`**: The total sales amount for the item before any discounts were applied.
+* **`Sales_Amount`**: The final sales amount for the item after discounts were applied.
+* **`Competition_Price`**: The price of the same item at a competing store during that fiscal week.
+
+
+## Initial Data Inspection
+
+After loading the dataset, a preliminary inspection was conducted to understand its structure, data types, and basic statistical properties. This step helps identify potential data quality issues, missing values, or unexpected distributions early in the process.
+
+### DataFrame Information (`df.info()`)
+
+The `df.info()` output provides a summary of the DataFrame, including the number of entries, column names, the count of non-null values for each column, and their respective data types.
+
+**Key Observations from `df.info()`:**
+* The dataset contains **100,000 entries** with **9 columns**.
+* Crucially, there are **no missing (Non-Null) values** in any of the columns, indicating a clean initial dataset in terms of completeness.
+* Data types appear appropriate for most columns: numerical columns (`Price`, `Item_Quantity`, `Sales_Amount_No_Discount`, `Sales_Amount`, `Competition_Price`) are correctly identified as `float64` or `int64`.
+* Categorical/identifier columns (`Fiscal_Week_ID`, `Store_ID`, `Item_ID`) are of `object` type, which is expected before further type conversions (e.g., `Fiscal_Week_ID` to datetime).
+
+### DataFrame Description (`df.describe()`)
+
+The `df.describe()` method provides descriptive statistics for numerical columns, offering insights into central tendency, dispersion, and shape of the distributions.
+
+**Key Observations from `df.describe()`:**
+* **Price and Competition_Price:** The mean `Price` for our store is ~167.02, while `Competition_Price` is ~174.28. This indicates that, on average, our store's prices are slightly lower than the competition's. Both have similar standard deviations, suggesting a comparable spread in pricing.
+* **Item_Quantity:** The average `Item_Quantity` sold is ~399.61. Quantities range from 285 to 522.
+* **Sales_Amount_No_Discount vs. Sales_Amount:** The mean `Sales_Amount_No_Discount` (~4771.15) is lower than `Sales_Amount` (~11396.87). This is an interesting observation, as typically discounts would *reduce* sales amount. This suggests that `Sales_Amount` might represent total revenue (Price * Quantity) and `Sales_Amount_No_Discount` might be an additional, unclarified metric, or that `Sales_Amount` includes other factors not explicitly stated. This will require further investigation or clarification during our optimization.
