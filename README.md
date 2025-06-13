@@ -99,3 +99,58 @@ Understanding our pricing strategy in relation to competitors is vital. This ana
 The histograms below illustrate that while both our store and competitors operate across a similar price range, there are distinct differences in their price distributions. Our store's prices tend to be more concentrated in the lower-to-mid price segments, with prominent peaks around the 100-150 range. In contrast, competitor prices show a stronger presence and higher frequency in the mid-to-higher price brackets (e.g., 150-200 and extending further), indicating a generally higher pricing strategy from the competition. This observation aligns with the initial statistical analysis where our average price was slightly lower than the competition's.
 
 ![comparison of price distribution](https://github.com/Phenomkay/Price-Optimization/blob/370006c5ba396769c423c3d43f40fcdc95545f66/comparison%20of%20price%20distribution.png)
+
+
+## Exploratory Data Analysis: Price-Revenue Relationships
+
+To gain a deeper understanding of how price influences revenue, two key scatter plots were generated. These visualizations help to observe the direct relationship between our own store's pricing and the revenue generated, as well as the less direct influence of competitor pricing on our sales performance.
+
+### Own Store Price vs. Revenue
+
+This plot examines the correlation between the `Price` of an item at our store and the calculated `Revenue` (Price \* Quantity) for that item.
+
+**Key Observation:**
+The plot on the left shows a general positive correlation: as `Own Store Price` increases, `Own Store Revenue` also tends to increase. However, the spread of points at higher prices suggests that this relationship is not perfectly linear, and other factors, particularly the quantity sold, play a significant role. This broad distribution hints at varying demand responses for different items.
+
+### Competition Price vs. Own Store Revenue
+
+This second plot investigates whether there's a discernible pattern between the `Competition_Price` and our `Own Store Revenue`.
+
+**Key Observation:**
+The plot on the right displays a wide scatter of points, indicating **no strong direct linear correlation between `Competition Price` and `Own Store Revenue`**. Our revenue can be high or low regardless of the competitor's price point. This observation is crucial because it suggests that simply matching or reacting to competitor prices without understanding our own demand characteristics may not be an optimal strategy for maximizing our revenue. This lack of a clear direct relationship reinforces the necessity of an elasticity-based model to truly understand and optimize our pricing.
+
+![price vs revenue](https://github.com/Phenomkay/Price-Optimization/blob/799af3ba1cf64956930c94f192db8c636c3f87b8/price%20vs%20revenue.png)
+
+
+## Exploratory Data Analysis: Price Trends Over Time
+
+To understand the historical context of pricing and identify any overarching trends, the average prices for both our store and competing stores were plotted over various fiscal weeks. This time-series analysis helps visualize the evolution of pricing strategies.
+
+**Key Observation:**
+
+The plot below reveals a consistent trend: **our store's average prices have historically been lower than those of the competition**. While both price lines show some fluctuations over time, the competition generally maintains a higher average price point. Our store's average price shows a noticeable dip around early April 2019, suggesting a potential pricing adjustment or promotional period during that time. This consistent pricing difference highlights the potential for strategic adjustments through dynamic pricing, either to maintain competitiveness in lower price ranges or to cautiously increase prices where market conditions allow.
+
+![price change over time](https://github.com/Phenomkay/Price-Optimization/blob/799af3ba1cf64956930c94f192db8c636c3f87b8/price%20change%20over%20time.png)
+
+
+## Key Metrics: Baseline Revenue and Quantity Comparison
+
+Before implementing the dynamic pricing model, it was essential to establish a baseline by calculating the total revenue and quantity sold for our store, and to estimate the equivalent for the competition. This allows for a direct comparison of current market standing.
+
+**Methodology:**
+* **Own Store Revenue:** Calculated by summing the `Revenue` column, which was previously defined as `Price * Item_Quantity`.
+* **Competition Revenue:** Estimated as a proxy by multiplying `Competition_Price` by our `Item_Quantity` and summing the result. This assumes that if competition had our quantities, this would be their revenue.
+* **Quantity Sold:** For comparison purposes, the total `Item_Quantity` sold by our store is used as a consistent base for both own store and hypothetical competition quantity.
+
+**Summary of Baseline Metrics:**
+
+The table below summarizes the total revenue and quantity sold for both our store and the estimated competition:
+
+| Metric            | Own Store     | Competition   |
+| :---------------- | :------------ | :------------ |
+| Total Revenue     | 6,601,342,000 | 6,965,710,000 |
+| Total Quantity Sold | 39,961,130    | 39,961,130    |
+
+**Key Observation:**
+
+This comparison clearly shows that, based on current pricing and quantities, the **estimated total revenue for the competition is higher than our own store's total revenue** (approximately 6.97 billion vs. 6.60 billion). This highlights a significant revenue gap and underscores the opportunity for optimization through dynamic pricing strategies.
