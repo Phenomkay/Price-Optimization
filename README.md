@@ -18,7 +18,6 @@ The core objective of this project is to develop and validate a dynamic pricing 
 * Developing a dynamic pricing model that adjusts prices based on factors such as competitor pricing, demand elasticity, and market trends.
 * Implementing and simulating the dynamic pricing model to compare its performance against the existing pricing strategy.
 
----
 
 ## 4. Data Acquisition
 
@@ -26,7 +25,6 @@ The dataset utilized in this project was sourced from **Aman Kharwal**, a distin
 
 The dataset is publicly available and can be accessed directly from [Statso.io: Price Optimization Case Study](https://statso.io/price-optimization-case-study/). His LinkedIn profile can be found here: [Aman Kharwal's LinkedIn](https://www.linkedin.com/in/aman-kharwal/).
 
----
 
 ## Data Loading
 
@@ -34,5 +32,4 @@ The initial step involved loading the raw `Competition_Data.csv` dataset into a 
 
 Upon loading, an initial inspection of the DataFrame was performed to understand its structure and content
 
----
 
