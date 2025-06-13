@@ -19,3 +19,20 @@ The core objective of this project is to develop and validate a dynamic pricing 
 * Implementing and simulating the dynamic pricing model to compare its performance against the existing pricing strategy.
 
 ---
+
+## 4. Data Acquisition
+
+The dataset utilized in this project was sourced from **Aman Kharwal**, a distinguished Data Scientist, Machine Learning, and AI Engineer. Aman is widely recognized for his extensive contributions to the data community through one of the largest data networks, where he consistently shares invaluable knowledge and insights on Data Analytics, Data Science, Machine Learning, and Artificial Intelligence.
+
+The dataset is publicly available and can be accessed directly from [Statso.io: Price Optimization Case Study](https://statso.io/price-optimization-case-study/). His LinkedIn profile can be found here: [Aman Kharwal's LinkedIn](https://www.linkedin.com/in/aman-kharwal/).
+
+---
+
+## Data Loading
+
+The initial step involved loading the raw `Competition_Data.csv` dataset into a Pandas DataFrame, typically named `df`. This foundational step prepares the data for all subsequent cleaning, transformation, and analysis processes. Key libraries such as `pandas` for efficient data manipulation, `numpy` for numerical operations, and `matplotlib.pyplot` and `seaborn` for comprehensive data visualization were utilized.
+
+Upon loading, an initial inspection of the DataFrame was performed to understand its structure and content
+
+---
+
