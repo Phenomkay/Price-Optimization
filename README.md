@@ -331,10 +331,9 @@ A dedicated function, `simulate_price_scenarios_with_elasticity`, was developed 
 
 For each `percentage_change` scenario:
 1.  **New Price Calculation:** A `new_price` was determined by applying the percentage change to the `Original_Price`.
-2.  **Simulated Quantity:** The `simulated_quantity` was then calculated using the core price elasticity formula:
-    $\text{Simulated Quantity} = \text{Original Quantity} \times (1 + \text{Average Item Elasticity} \times \% \text{Change in Price})$
-    A crucial safeguard `max(0, ...)` was applied to ensure that the simulated quantity does not drop below zero, maintaining practical realism.
-3.  **Simulated Revenue:** Finally, the `simulated_revenue` for each scenario was computed by multiplying the `New_Price_Simulated` by the `Simulated_Quantity`.
+2.  **Simulated Quantity:** The `simulated_quantity` was then calculated using the core price elasticity formula: 
+    Simulated Quantity = Original Quantity × ( 1 + Average Item Elasticity × % Change in Price) A crucial safeguard max(0, ...) was applied to ensure that the simulated quantity does not drop below zero, maintaining practical realism.
+4.  **Simulated Revenue:** Finally, the `simulated_revenue` for each scenario was computed by multiplying the `New_Price_Simulated` by the `Simulated_Quantity`.
 
 These simulated results, including the `Original_Price`, `Original_Quantity`, `Original_Revenue`, `Avg_Item_Elasticity`, `Pct_Change_Applied`, `New_Price_Simulated`, `Simulated_Quantity`, and `Simulated_Revenue`, were collected into a new DataFrame, `sim_df_elasticity`.
 
