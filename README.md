@@ -260,7 +260,9 @@ With the price elasticity of demand calculated, the next critical step was to im
 3.  **Simulating New Quantity:**
     * The projected `simulated_item_quantity` was calculated using the fundamental elasticity formula:
         $\text{New Quantity} = \text{Old Quantity} \times (1 + \text{Elasticity} \times \% \text{Change in Price})$
+      
     * The `% Change in Price` was derived from the difference between the `dynamic_price` and the `Price` (original price).
+      
     * Quantities were capped at a minimum of zero to ensure realistic outcomes.
 
 4.  **Calculating Dynamic Revenue:**
